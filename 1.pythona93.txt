@@ -1,0 +1,28 @@
+import time
+import random
+
+# 模擬股票下單函數
+def place_order(stock_code, quantity, price, side):
+    # 在這裡放置實際下單的程式碼
+    print(f"下單：股票代碼={stock_code} 數量={quantity} 價格={price} 交易方向={side}")
+
+# 主程式
+def main():
+    # 獲取股票代碼、數量、價格和交易方向等資訊
+    stock_code = input("請輸入股票代碼：")
+    quantity = int(input("請輸入數量："))
+    price = float(input("請輸入價格："))
+    side = input("請輸入交易方向（買入/賣出）：")
+
+    # 執行下單
+    place_order(stock_code, quantity, price, side)
+
+    # 模擬等待回應
+    time.sleep(random.randint(1, 5))
+
+    # 獲取回應並處理
+    response = random.choice(["成功", "失敗"])
+    print(f"下單回應：{response}")
+
+if __name__ == "__main__":
+    main()
